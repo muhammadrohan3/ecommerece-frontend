@@ -2,12 +2,12 @@ import React from 'react'
 import { useSelector  , useDispatch} from 'react-redux'
 function Test() {
     const dispatch = useDispatch()
-    const {reducer} = useSelector(state =>state)
-    console.log(reducer)
+    const {cart} = useSelector(state =>state)
+    console.log(cart)
   return (
     <>
-    <div>{reducer.no}</div>
-    <button onClick={()=>{dispatch({type : "TEST" , payload :true})}}>Click me</button>
+    <div>{cart.itemsInCart}</div>
+    <button onClick={()=>{dispatch({type : "ADD_TO_CART" , payload :true})}}>Click me</button>
     </>
   )
 }
