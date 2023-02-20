@@ -1,6 +1,7 @@
 import {cart} from '../actions/actions.js'
 const initialState = {
-    no : 0,
+    itemsInCart : 0, 
+    items : []
 }
 
 export default (state = initialState , action)=>{
@@ -8,7 +9,7 @@ export default (state = initialState , action)=>{
     {
         case cart.ADD_TO_CART:
             return {
-                ...state, no : state.no + 1
+                ...state, itemsInCart : state.itemsInCart+1, items : [...state.items,action.payload]
             }
         default:
             return state
